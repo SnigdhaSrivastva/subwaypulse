@@ -1,0 +1,47 @@
+name: Live snapshot
+
+# Every 30 minutes: snapshot all MTA real-time feeds, append to history, publish the status board.
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.11'
+      - run: uv pip install -e .
+      - name: Restore history
+        uses: actions/cache/restore@v4
+        with:
+          path: subwaypulse.sqlite
+          key: history-${{ github.run_id }}
+          restore-keys: history-
+      - name: Snapshot
+        run: uv run --no-sync subwaypulse | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Save history
+        uses: actions/cache/save@v4
+        with:
+          path: subwaypulse.sqlite
+          key: history-${{ github.run_id }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

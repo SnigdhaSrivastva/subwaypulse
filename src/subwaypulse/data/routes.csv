@@ -1,0 +1,30 @@
+route_id,color,text_color,long_name
+A,0062CF,FFFFFF,8 Avenue Express
+C,0062CF,FFFFFF,8 Avenue Local
+E,0062CF,FFFFFF,8 Avenue Local
+B,EB6800,FFFFFF,6 Avenue Express
+D,EB6800,FFFFFF,6 Avenue Express
+F,EB6800,FFFFFF,Queens Blvd Express/6 Av Local
+FX,EB6800,FFFFFF,Brooklyn F Express
+M,EB6800,FFFFFF,Queens Blvd Local/6 Av Local
+G,799534,FFFFFF,Brooklyn-Queens Crosstown
+J,8E5C33,FFFFFF,Nassau St Local
+Z,8E5C33,FFFFFF,Nassau St Express
+L,7C858C,FFFFFF,14 St-Canarsie Local
+N,F6BC26,000000,Broadway Local
+Q,F6BC26,000000,Broadway Express
+R,F6BC26,000000,Broadway Local
+W,F6BC26,000000,Broadway Local
+GS,7C858C,FFFFFF,42 St Shuttle
+FS,7C858C,FFFFFF,Franklin Avenue Shuttle
+H,7C858C,FFFFFF,Rockaway Park Shuttle
+1,D82233,FFFFFF,Broadway - 7 Avenue Local
+2,D82233,FFFFFF,7 Avenue Express
+3,D82233,FFFFFF,7 Avenue Express
+4,009952,FFFFFF,Lexington Avenue Express
+5,009952,FFFFFF,Lexington Avenue Express
+6,009952,FFFFFF,Lexington Avenue Local
+6X,009952,FFFFFF,Pelham Bay Park Express
+7,9A38A1,FFFFFF,Flushing Local
+7X,9A38A1,FFFFFF,Flushing Express
+SI,08179C,FFFFFF,Staten Island Railway
